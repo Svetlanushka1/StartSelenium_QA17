@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class StartSelenium {
@@ -20,20 +19,19 @@ public class StartSelenium {
 
     }
     @Test
-    public void testName(){
+    public void testNameCW(){
         WebElement element = wd.findElement(By.tagName("a"));
         List<WebElement> Elements = wd.findElements(By.tagName("div"));
         System.out.println(Elements.size());
-
         wd.findElement(By.id("root"));
-        //wd.findElement(By.linkText("HOME"));
-        //wd.findElement(By.partialLinkText("HO"));
-        //System.out.println();
+        wd.findElement(By.linkText("HOME"));
+        wd.findElement(By.partialLinkText("HO"));
+        System.out.println();
         WebElement div = wd.findElement(By.tagName("div"));
-
+        wd.quit();
     }
     @Test
-    public void homeWork3(){
+    public void byCssHW3(){
         wd.get("https://telranedu.web.app/login");
         List<WebElement> listA = wd.findElements(By.tagName("a"));
             System.out.println(listA.size());
@@ -55,6 +53,25 @@ public class StartSelenium {
             System.out.println("loginButton");
         WebElement registrationButton = wd.findElement(By.cssSelector("button[name='registration']"));
             System.out.println("registrationButton");
+            wd.quit();
+
+    }
+    @Test
+    public void testNameCW4(){
+        System.out.println("test started");
+        WebElement element = wd.findElement(By.tagName("a"));
+        List<WebElement> elements = wd.findElements(By.tagName("div"));
+        System.out.println(elements.size());
+        wd.findElement(By.linkText("HOME"));
+        wd.findElement(By.partialLinkText("HO"));
+        wd.findElement(By.id("root"));
+
+        wd.findElement(By.cssSelector("[href='/login']"));
+        wd.findElement(By.cssSelector("[href^='/lo']"));
+        wd.findElement(By.cssSelector("[href*='og']"));
+        wd.findElement(By.cssSelector("[href$='gin']"));
+
+        List<WebElement> buttons = wd.findElements(By.tagName("button"));
 
     }
     @AfterMethod
