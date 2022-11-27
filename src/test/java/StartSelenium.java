@@ -18,7 +18,7 @@ public class StartSelenium {
         wd.navigate().refresh();
 
     }
-    @Test
+   /* @Test
     public void testNameCW(){
         WebElement element = wd.findElement(By.tagName("a"));
         List<WebElement> Elements = wd.findElements(By.tagName("div"));
@@ -30,7 +30,7 @@ public class StartSelenium {
         WebElement div = wd.findElement(By.tagName("div"));
         wd.quit();
     }
-    @Test
+        @Test
     public void byCssHW3(){
         wd.get("https://telranedu.web.app/login");
         List<WebElement> listA = wd.findElements(By.tagName("a"));
@@ -55,28 +55,35 @@ public class StartSelenium {
             System.out.println("registrationButton");
             wd.quit();
 
-    }
+    }*/
     @Test
-    public void testNameCW4(){
-        System.out.println("test started");
+    public void newStrategy() {
         WebElement element = wd.findElement(By.tagName("a"));
-        List<WebElement> elements = wd.findElements(By.tagName("div"));
-        System.out.println(elements.size());
-        wd.findElement(By.linkText("HOME"));
-        wd.findElement(By.partialLinkText("HO"));
-        wd.findElement(By.id("root"));
+        wd.findElement(By.cssSelector("div a:nth-child(3)"));
 
-        wd.findElement(By.cssSelector("[href='/login']"));
-        wd.findElement(By.cssSelector("[href^='/lo']"));
-        wd.findElement(By.cssSelector("[href*='og']"));
-        wd.findElement(By.cssSelector("[href$='gin']"));
+
+        List<WebElement> elements = wd.findElements(By.tagName("div"));
+        wd.findElement(By.cssSelector("div a:nth-child(3)"));
+
+        wd.findElement(By.linkText("HOME"));
+        //wd.findElement(By.cssSelector("[href='/about']"));
+
+
+        wd.findElement(By.id("root"));
+        wd.findElement(By.cssSelector("#root"));
+
+        wd.findElement(By.partialLinkText("AB"));
+        wd.findElement(By.cssSelector("[href^='/ab']"));
+        wd.findElement(By.cssSelector("[href*='ou']"));
+        wd.findElement(By.cssSelector("[href$='out']"));
 
         List<WebElement> buttons = wd.findElements(By.tagName("button"));
-
     }
+
     @AfterMethod
     public void postCondition(){
         wd.quit();
 
     }
 }
+
