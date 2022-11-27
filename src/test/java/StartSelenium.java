@@ -13,7 +13,7 @@ public class StartSelenium {
     @BeforeMethod
     public void preCondition() {
         wd = new ChromeDriver();
-        wd.get("https://telranedu.web.app/home");
+        wd.get("https://telranedu.web.app/login");
         wd.navigate().forward();
         wd.navigate().refresh();
 
@@ -58,26 +58,38 @@ public class StartSelenium {
     }*/
     @Test
     public void newStrategy() {
-        WebElement element = wd.findElement(By.tagName("a"));
-        wd.findElement(By.cssSelector("div a:nth-child(3)"));
+       /* //WebElement element = wd.findElement(By.tagName("a"));
+        WebElement element = wd.findElement(By.xpath("//a"));
 
+        //wd.findElement(By.cssSelector("div a:nth-child(3)"));
+        wd.findElement(By.xpath("//body"));
 
-        List<WebElement> elements = wd.findElements(By.tagName("div"));
-        wd.findElement(By.cssSelector("div a:nth-child(3)"));
+        //List<WebElement> elementsDiv = wd.findElements(By.tagName("div"));
+        List<WebElement> elementsDiv = wd.findElements(By.xpath("//div"));*/
 
-        wd.findElement(By.linkText("HOME"));
-        //wd.findElement(By.cssSelector("[href='/about']"));
+        //WebElement tabHOME = wd.findElement(By.linkText("HOME"));
+        WebElement tabHOME = wd.findElement(By.xpath("(//a[text()='HOME'])"));
+        System.out.println(tabHOME.getText());
 
+      /*  //wd.findElement(By.id("root"));
+        //wd.findElement(By.cssSelector("#root"));
+        wd.findElement(By.xpath("//*[@id ='root']"));
 
-        wd.findElement(By.id("root"));
-        wd.findElement(By.cssSelector("#root"));
-
-        wd.findElement(By.partialLinkText("AB"));
+        wd.findElement(By.partialLinkText("lo"));
         wd.findElement(By.cssSelector("[href^='/ab']"));
-        wd.findElement(By.cssSelector("[href*='ou']"));
-        wd.findElement(By.cssSelector("[href$='out']"));
+        wd.findElement(By.xpath("//*[starts-with(@href,'/lo')]"));
+
+
+        wd.findElement(By.cssSelector("[href*='og']"));
+        wd.findElement(By.xpath("//*[contains(@href,'og'])"));
+
+        wd.findElement(By.cssSelector("[href$='gin']"));*/
 
         List<WebElement> buttons = wd.findElements(By.tagName("button"));
+        WebElement loginBtn = wd.findElement(By.xpath("//button[@name='login']"));
+             System.out.println(loginBtn.getText());
+        WebElement registrationBtn = wd.findElement(By.xpath("//button[@name='registration']"));
+            System.out.println(registrationBtn.getText());
     }
 
     @AfterMethod

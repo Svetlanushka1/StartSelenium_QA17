@@ -40,7 +40,7 @@ public class XPathCW5 {
 
         //start-with:
         wd.findElement(By.cssSelector("[href^='/lo']"));
-        wd.findElement(By.xpath("//*[starts-with(@href,'/lo'])"));
+        wd.findElement(By.xpath("//*[starts-with(@href,'/lo')]"));
 
         //contains
         wd.findElement(By.cssSelector("[href*='og']"));
