@@ -24,7 +24,7 @@ public class TableTest {
     @Test
     public void tableTestCSSCW() {
         //WebElement canada = wd.findElement(By.cssSelector("#customers tr:nth-child(8) td:last-child"));
-        WebElement canada = wd.findElement(By.xpath("//td[text()='Canada']"));
+        WebElement canada = wd.findElement(By.xpath("//table[@id='customers']//tr[8]/td[last()]")); //"td[text()='Canada']"
         String text = canada.getText();
         System.out.println(text);
         //Assert.assertEquals(text,"Canada");
@@ -41,7 +41,7 @@ public class TableTest {
             System.out.println(text);
 
         //WebElement contact = wd.findElement(By.cssSelector("table#customers tr th:nth-child(2)"));
-        WebElement contact = wd.findElement(By.xpath("//th[2][text()='Contact']"));
+        WebElement contact = wd.findElement(By.xpath("//th[2][text()='Contact']")); //"//table[@='customers']//tr[4]"));
             System.out.println(contact.getText());
         //Assert.assertEquals(text2, "Contact");
 
@@ -63,7 +63,7 @@ public class TableTest {
         // print amount of table rows
         //List<WebElement> listRows = wd.findElements(By.cssSelector("#customers tr"));
         List<WebElement> listRows = wd.findElements(By.xpath("//table[@id='customers']//tr"));
-        //body[1]/div[7]/div[1]/div[1]/table[1]/tbody[1]/tr     "//*[@id='customers']//tr"
+        //body[1]/div[7]/div[1]/div[1]/table[1]/tbody[1]/tr
         System.out.println(listRows.size());
 
         // print amount of table cols
